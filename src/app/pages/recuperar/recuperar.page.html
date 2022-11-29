@@ -1,0 +1,22 @@
+<ion-header>
+  
+</ion-header>
+
+<ion-content class="content">
+  <div class="fondo">
+      
+    <ion-card class="card">
+      <img src="../../../assets/img/perder_contra.png" alt="imagen_login" class="imagen_recuperacion"/>
+
+      <ion-item class="item">
+        <ion-label position="stacked">Recuperar Contraseña</ion-label>
+        <ion-input placeholder="Ingrese correo de recuperacion" type="email" [(ngModel)]="correo"></ion-input>
+      </ion-item>
+      <!--El comando .include('cadena'): busca que un texto contenga la cadena de texto indicada...
+        El disabled deshabilita el boton cuando el correo no incluye la cadena de texto: @duocuc.cl -->
+      <ion-button expand="block" (click)="recuperar()" [disabled]="!correo.includes('@duocuc.cl')" (click)="showLoading()">Recuperar</ion-button>
+    </ion-card>
+
+  </div>
+
+</ion-content>

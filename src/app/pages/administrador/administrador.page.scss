@@ -1,0 +1,71 @@
+@use '../../../global.scss';
+
+
+ion-card {
+    --background: linear-gradient(#269fbd, #dddee0);
+    margin: 0 auto;
+    top: 2vh;
+    height: 100vh;
+    width: 60vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-size: cover;
+
+}
+.cardlista{
+    background-color: rgb(255, 246, 246);
+    margin: 0 auto;
+    top: 5vh;
+    height: 20vh;
+    width: 90vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-size: cover;
+}
+
+
+.div{
+    padding: auto;
+}
+
+
+
+.fondo {
+    height: 200vh;
+    background-color: rgb(160, 154, 148);
+    background-size: cover;
+    text-align: center;
+}
+.lista{
+    height: 100vh;
+    background-color: rgb(160, 154, 148);
+    background-size: cover;
+    text-align: center; 
+    height: 40vh;
+}
+
+.imagen_login {
+    width: 30%;
+}
+
+
+
+ion-item {
+    --background: none;
+
+    ion-label {
+        font-size: large;
+        font-weight: bold;
+    }
+}
+
+
+@media (max-width: 400px) {
+    .fondo {
+        ion-card {
+            width: 80vw;
+        }
+    }
+}

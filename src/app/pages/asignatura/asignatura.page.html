@@ -1,0 +1,53 @@
+
+
+<ion-content>
+  <div class="fondo">
+    <form [formGroup]="asignatura" (ngSubmit)="agregar()">
+      <ion-card>
+  
+        <ion-card-header>
+          <ion-card-subtitle>INGRESAR</ion-card-subtitle>
+        </ion-card-header>
+        <ion-card-content>
+          <ion-item >
+            <ion-label position="stacked">sigla</ion-label>
+            <ion-input formControlName="sigla" type="text" placeholder="Ingrese correo"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="stacked">nombre</ion-label>
+            <ion-input formControlName="nombre" type="text" placeholder="Ingrese clave"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="stacked">profesor</ion-label>
+            <ion-input formControlName="profesor" type="text" placeholder="Ingrese clave"></ion-input>
+          </ion-item>
+          <ion-button type="submit" expand="full">Ingresar</ion-button>
+          <ion-button (click)="modificar()" [disabled]="id_modificar == ''" expand="full">Modificar</ion-button>
+
+        </ion-card-content>
+
+
+        <ion-list *ngFor="let u of asignaturas">
+    
+          <ion-item>
+            <ion-label>{{u.id}} {{u.sigla}} {{u.nombre}} {{u.profesor}}</ion-label>
+            <ion-button (click)="buscar(u.id)" fill="outline">BUSCAR</ion-button>
+            <ion-button (click)="eliminar(u.id)" fill="outline">ELIMINAR</ion-button>
+          </ion-item>
+      
+        </ion-list>
+<!--         <ion-item>
+          <a routerLink="/registro" (click)="showLoading()">Registrar usuario</a>
+        </ion-item>
+ -->
+<!--         <ion-item>
+          <a routerLink="/recuperar" (click)="showLoading()">Recuperar contraseña</a>
+        </ion-item> -->
+    
+      </ion-card>
+    </form>
+  </div>
+
+
+
+</ion-content>

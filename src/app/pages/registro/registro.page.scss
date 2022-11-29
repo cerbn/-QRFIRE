@@ -1,0 +1,24 @@
+.fondo {
+    height: 200vh;
+    background-image: url("../../..//assets/img/fondo_duoc.jpg");
+    background-size: cover;
+    text-align: center;
+}
+
+ion-card {
+    --background: linear-gradient(#269fbd, #dddee0);
+    margin: 0 auto;
+    top: 5vh;
+    height: 80vh;
+    width: 50vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-size: cover;
+
+}
+
+ion-item {
+    --background: none;
+    width: 300px;
+}

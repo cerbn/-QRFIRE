@@ -1,0 +1,61 @@
+<ion-header>
+  
+</ion-header>
+
+<ion-content>
+  
+  <div class="fondo">
+    <form [formGroup]="usuario" (ngSubmit)="registrar()">
+      <ion-card>
+        <ion-card-header>
+          <ion-card-subtitle>Registro de Usuario</ion-card-subtitle>
+        </ion-card-header>
+        <ion-item>
+          <ion-label position="stacked">Rut</ion-label>
+          <ion-input formControlName="rut" id="rut" type="text" placeholder="Ingrese rut"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="stacked">Nombre</ion-label>
+          <ion-input formControlName="nombre" id="nombre" type="text" placeholder="Ingrese nombre"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="stacked">Apellido</ion-label>
+          <ion-input formControlName="ap_paterno" id="ap_paterno" type="text" placeholder="Ingrese apellido paterno">
+          </ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="stacked">Fecha nacimiento</ion-label>
+          <ion-input formControlName="fecha_nac" id="fecha_nac" type="date">
+          </ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="stacked">Correo</ion-label>
+          <ion-input formControlName="correo" id="correo" type="email" placeholder="Ingrese correo"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="stacked">Clave</ion-label>
+          <ion-input formControlName="clave" id="clave" type="password" placeholder="Ingrese clave"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="stacked">Repetir Clave</ion-label>
+          <ion-input [(ngModel)]="repetir_clave" [ngModelOptions]="{standalone: true}" id="repetir_clave" type="password"
+            placeholder="Ingrese clave nuevamente"></ion-input>
+        </ion-item>
+
+<!--         <ion-item>
+          <ion-checkbox slot="start">
+            <ion-label>Acepta terminos y condiciones.</ion-label>
+          </ion-checkbox>
+        </ion-item> -->
+
+        <ion-button expand="full" type="submit" >REGISTRAR</ion-button>
+      </ion-card>
+    </form>
+  </div>
+</ion-content>

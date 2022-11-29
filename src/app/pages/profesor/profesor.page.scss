@@ -1,0 +1,51 @@
+@use '../../../global.scss';
+
+
+ion-card {
+    --background: linear-gradient(#92c0cb, #ac9a75);
+    margin: 0 auto;
+    top: 0vh;
+    height: 40vh;
+    width: 40vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-size: cover;
+
+}
+.titulo{
+    color: #c54c1c;
+    background-color: #92c0cb;
+    margin: 0 auto;
+    top: 0vh;
+    height: 7vh;
+    width: 41vh;
+  }
+.cont{
+    
+  background-color: #92c0cb;
+
+    
+}
+
+.qr{
+  --background: linear-gradient(#92c0cb, #ac9a75);
+  margin: 0 auto;
+  top: 0vh;
+  height: 40vh;
+  width: 40vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-size: cover;
+}
+
+.cod{
+  color: #000000;
+  background-color: #92c0cb;
+  margin: 0 auto;
+  top: 0vh;
+  height: 7vh;
+  width: 50vh;
+
+}

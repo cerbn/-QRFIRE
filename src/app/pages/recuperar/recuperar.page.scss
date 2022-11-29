@@ -1,0 +1,32 @@
+.fondo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(#269fbd, #ffaa00);
+}
+ion-card {
+    --background: linear-gradient(#269fbd, #dddee0);
+    margin: 0 auto;
+    top: 0vh;
+    height: 90vh;
+    width: 50vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-size: cover;
+
+
+}
+
+ion-item {
+    --background: none;
+    width: 300px;
+
+}
+.imagen_recuperacion{
+    
+    height: 330px;
+    width: 330px;
+}
+

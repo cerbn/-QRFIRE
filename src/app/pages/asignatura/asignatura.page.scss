@@ -1,0 +1,32 @@
+ion-card {
+    background-color: rgb(255, 246, 246);
+    margin: 0 auto;
+    top: 5vh;
+    height: 200vh;
+    width: 90vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-size: cover;
+
+}
+
+.fondo {
+
+    height: 200vh;
+    background-color: rgb(160, 154, 148);
+    text-align: center;
+}
+
+.card2{
+    background-color: bisque;
+    margin: 0 auto;
+    top: 5vh;
+    height: 40vh;
+    width: 90vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-size: cover;
+
+}
