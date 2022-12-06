@@ -13,6 +13,9 @@ import { AlertController } from '@ionic/angular';
 })
 export class LoginPage implements OnInit {
 
+  is_logued: boolean;
+
+
   usuarios : any [] = []
   correoConcatenado:any;
   //variables:

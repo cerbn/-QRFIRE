@@ -164,15 +164,4 @@ agregaClase(coleccion, id, value){
 
 
 
-
-/*   async agregarqr(key, codAlumno, usuario){
-    this.asistencias = await this.asistenciaStorage.get(key) || [];
-  
-    var index = this.asistencias.findIndex(value => value.value == codAlumno);
-      this.asistencias[index].alumno.push(usuario.rut);
-      await this.asistenciaStorage.set(key, this.asistencias);
-      return true;
-    
-  }
-   */
 }

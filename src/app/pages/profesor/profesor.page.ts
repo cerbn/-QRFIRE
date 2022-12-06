@@ -17,11 +17,6 @@ import { formatDate } from '@angular/common';
 export class ProfesorPage implements OnInit {
   profesor : any;
   elementType: NgxQrcodeElementTypes = NgxQrcodeElementTypes.CANVAS;
-/*   value  = ''
-  a: any = 'aaaaaaaaaaaaaaaaaaaaaaaaaaa'
-  asigna : any
-  
-   */
   
   usuarios: any [] = [];
   asignaturas: any[] = [];
@@ -30,11 +25,11 @@ export class ProfesorPage implements OnInit {
   rut :string = '' ;
   clases: any =''
   clasesFecha: any =''
-  id: any = '';
-  sigla: any = '';
-  Clasid: any;
-  dia: any;
-  dia2: any;
+  id: any = ''
+  estado: any = 'No Iniciada'
+
+
+
 
   asistencia = {
     ide: '',
@@ -43,13 +38,13 @@ export class ProfesorPage implements OnInit {
 
   };
 
-  constructor(private activatedRoute: ActivatedRoute, private router: Router, private asignaturaStorage: AsignaturasService, private usuarioService : UsuarioService,
-              private asistenciaStorage: AsistenciaService, private cargar: LoadingController,private FirebaseService: FirebaseService,
+  
+  constructor(private activatedRoute: ActivatedRoute, private router: Router,
+              private FirebaseService: FirebaseService,
               private toast: ToastController) { }
 
   async ngOnInit() {
     this.rut = this.activatedRoute.snapshot.paramMap.get('rut');
-    this.asignaturas = await this.asignaturaStorage.getDatos('asignaturas')
     this.cargarAsignaturas()    
     this.cargarClases()
 
@@ -102,27 +97,37 @@ export class ProfesorPage implements OnInit {
   generarQR(){
     if (this.asistencia.ide == '') {
       this.asistencia.ide = this.id
-      return this.asistencia.ide;
-    }}
+        }}
  
 
 
 generarClase(){
- this.clases = this.clasess.find(clas => clas.ide == this.id)
+ this.clases = this.clasess.find(clas => clas.ide == this.asistencia.ide)
 if(this.clases == undefined){
 
   console.log(this.clases)
   this.FirebaseService.agregar('clases', this.asistencia)
-
+  this.estado = 'Clase Iniciada'
+ 
   this.toastexito('bottom', 'La Clase Fue Iniciada');
 
 }else{
   this.toastError('bottom', 'Error! clase no iniciada');
+  this.asistencia.ide = ''
+}}
+
+
+resetIde(){
+
+  this.asistencia.ide = ''
+  this.estado = 'Clase Terminada'
 
 }
 
 
-}
+
+
+
 
 
 async toastError(position: 'bottom', message: string) {
@@ -145,9 +150,19 @@ async toastError(position: 'bottom', message: string) {
   }
   
 
+
+
+
+
+
+
+
+
+
+
+
 }
 
 
 
   
-

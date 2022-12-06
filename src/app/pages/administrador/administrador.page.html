@@ -1,7 +1,9 @@
 <ion-content>
   <div class="fondo">
     <form [formGroup]="usuario" (ngSubmit)="registrar()">
+
       <ion-card>
+        
         <ion-card-header>
           <ion-card-subtitle>Registro de Usuario</ion-card-subtitle>
         </ion-card-header>
@@ -53,30 +55,40 @@
           <ion-input [(ngModel)]="repetir_clave" [ngModelOptions]="{standalone: true}" id="repetir_clave" type="password"
             placeholder="Ingrese clave nuevamente"></ion-input>
         </ion-item>
-
-<!--         <ion-item>
-          <ion-checkbox slot="start">
-            <ion-label>Acepta terminos y condiciones.</ion-label>
-          </ion-checkbox>
-        </ion-item> -->
+  
         <br>
         <br>
         <ion-button expand="full" type="submit" >REGISTRAR</ion-button>
         <ion-button expand="full" type="reset" color="terciary">LIMPIAR</ion-button>
         <ion-button (click)="modificar()" [disabled]="id_modificar == ''" expand="full">Modificar</ion-button>
-
-        
         <br>
-      </ion-card>
-      <ion-list *ngFor="let u of usuarios">
+        
+      </ion-card >
+
+ 
+      <h1>Lista de usuarios</h1>
+      <div class="div">
+        
+        <ion-list *ngFor="let u of usuarios" class="lista">
   
-        <ion-item>
-          <ion-label>{{u.id}} {{u.rut}} {{u.nombre}} {{u.correo}}</ion-label>
-          <ion-button (click)="buscar(u.id)" fill="outline">BUSCAR</ion-button>
-          <ion-button (click)="eliminar(u.id)" fill="outline">ELIMINAR</ion-button>
-        </ion-item>
+          <ion-card class="cardlista">
+        
+                <ion-card-title>ID: {{u.id}}</ion-card-title>
+                <ion-card-title>NOMBRE: {{u.nombre + ' ' + u.ap_paterno}}</ion-card-title>
+                <ion-card-title>RUT: {{u.rut}}</ion-card-title>
+                <ion-card-title>CORREO: {{u.correo}}</ion-card-title>
+
+            <ion-item>
+              <ion-button slot="end" color="warning"(click)="buscar(u.id)">Buscar</ion-button>
+              <ion-button slot="end" color="danger"  (click)="eliminar(u.id)">Eliminar</ion-button>
+            </ion-item>
+          </ion-card>
+        </ion-list>
+      </div>
     
-      </ion-list>
+
+
+
     </form>
   </div>
 </ion-content>

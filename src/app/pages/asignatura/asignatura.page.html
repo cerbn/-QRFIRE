@@ -3,6 +3,7 @@
 <ion-content>
   <div class="fondo">
     <form [formGroup]="asignatura" (ngSubmit)="agregar()">
+
       <ion-card>
   
         <ion-card-header>
@@ -26,28 +27,31 @@
 
         </ion-card-content>
 
-
-        <ion-list *ngFor="let u of asignaturas">
-    
-          <ion-item>
-            <ion-label>{{u.id}} {{u.sigla}} {{u.nombre}} {{u.profesor}}</ion-label>
-            <ion-button (click)="buscar(u.id)" fill="outline">BUSCAR</ion-button>
-            <ion-button (click)="eliminar(u.id)" fill="outline">ELIMINAR</ion-button>
-          </ion-item>
-      
-        </ion-list>
-<!--         <ion-item>
-          <a routerLink="/registro" (click)="showLoading()">Registrar usuario</a>
-        </ion-item>
- -->
-<!--         <ion-item>
-          <a routerLink="/recuperar" (click)="showLoading()">Recuperar contraseña</a>
-        </ion-item> -->
-    
       </ion-card>
+
+
+
+        <h1>Lista de asignaturas</h1>
+        <div class="div">
+          
+          <ion-list *ngFor="let u of asignaturas" class="lista">
+    
+            <ion-card class="cardlista">
+          
+                  <ion-card-title>ID: {{u.id}}</ion-card-title>
+                  <ion-card-title>sigla: {{u.sigla}}</ion-card-title>
+                  <ion-card-title>NOMBRE: {{u.nombre}}</ion-card-title>
+                  <ion-card-title>profesor: {{u.profesor}}</ion-card-title>
+                  
+              <ion-item>
+                <ion-button slot="end" color="warning"(click)="buscar(u.id)">Buscar</ion-button>
+                <ion-button slot="end" color="danger"  (click)="eliminar(u.id)">Eliminar</ion-button>
+              </ion-item>
+            </ion-card>
+          </ion-list>
+        </div>
+
+    
     </form>
   </div>
-
-
-
 </ion-content>

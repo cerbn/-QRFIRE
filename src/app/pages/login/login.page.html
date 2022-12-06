@@ -21,13 +21,13 @@
           <ion-label position="stacked">Contraseña</ion-label>
           <ion-input formControlName="clave" type="password" placeholder="Ingrese clave"></ion-input>
         </ion-item>
-        <ion-button type="submit" expand="full" [disabled]="!usuario.valid" (click)="showLoading()">Ingresar</ion-button>
+        <ion-button type="submit" expand="full" [disabled]="!usuario.valid">Ingresar</ion-button>
       </ion-card-content>
       <ion-item>
-        <a routerLink="/registro" (click)="showLoading()" (click)="presentToast('bottom')">Registrar usuario</a>
+        <a routerLink="/registro" >Registrar usuario</a>
       </ion-item>
       <ion-item>
-        <a routerLink="/recuperar" (click)="showLoading()">Recuperar contraseña</a>
+        <a routerLink="/recuperar" >Recuperar contraseña</a>
       </ion-item>
   
     </ion-card>

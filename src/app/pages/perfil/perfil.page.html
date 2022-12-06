@@ -5,19 +5,14 @@
       <h1>Perfil De Usuario</h1>  
       <img src="../../../assets/img/usuario.png" alt="imagen_login" class="imagen_login" height="200px"/>
 
-
-
-
       
-       <ion-list *ngFor="let u of usuarios">
-        <ion-list  *ngIf="rut == u.rut">
+       <ion-list *ngFor="let u of usuarios" class="lista">
+        <ion-list  *ngIf="rut == u.rut" class="lista">
           <h4>Nombre: {{u.nombre + ' ' + u.ap_paterno}}</h4>
           <h4>Rut: {{u.rut}}</h4>
           <h4>Correo {{u.correo}}</h4> 
 
         </ion-list>
-    
-     
       
       </ion-list>
       </ion-card>

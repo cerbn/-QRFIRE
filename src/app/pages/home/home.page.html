@@ -5,35 +5,28 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content *ngIf="usuario.tipo_usuario == 'administrador'">
+<ion-content>
   <ion-card class="ion-cardFondo">
-    <!--     <ion-title class="bienvenido" >Bienvenido: {{usuario.nombre + ' ' + usuario.ap_paterno}}</ion-title> -->   
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-    
-    <h1>Bienvenido: {{usuario.nombre + ' ' + usuario.ap_paterno}}</h1>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
 
-    <ion-searchbar animated="True" placeHolder="Busqueda"></ion-searchbar>
-  
+
+    <img src="../../../assets/img/logo.png" alt="imagen_login" class="imagen_login"/>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+    <h1>Bienvenido: {{usuario.nombre}}</h1>
+
+
+
+  </ion-card>  
   
   <ion-tabs>
     <ion-tab-bar slot="bottom" class="tab">
@@ -50,113 +43,28 @@
         <ion-badge>1</ion-badge>
       </ion-tab-button>
   
+
+      <ion-tab-button tab="profesor/{{usuario.rut}}" *ngIf="usuario.tipo_usuario == 'profesor'" >
+        <ion-icon name="attach-outline"></ion-icon>
+        <ion-label>asignaturas</ion-label>
+        <ion-badge>1</ion-badge>
+      </ion-tab-button>
+
+
+      <ion-tab-button tab="alumno/{{usuario.rut}}" *ngIf="usuario.tipo_usuario == 'alumno'">
+        <ion-icon name="qr-code-outline"></ion-icon>
+        <ion-label>Escanear Qr</ion-label>
+        <ion-badge>1</ion-badge>
+      </ion-tab-button>
+
       <ion-tab-button tab="perfil/{{usuario.rut}}" class="tab">
         <ion-icon name="person-circle-outline"></ion-icon>
         <ion-label>Perfil</ion-label>
       </ion-tab-button>
   
+
+
     </ion-tab-bar>
   </ion-tabs>
-</ion-card>
-</ion-content>
 
-<ion-content *ngIf="usuario.tipo_usuario == 'profesor'">
-<ion-card class="ion-cardFondo">
-  <!--     <ion-title class="bienvenido" >Bienvenido: {{usuario.nombre + ' ' + usuario.ap_paterno}}</ion-title> -->   
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-  
-  <h1>Bienvenido: {{usuario.nombre + ' ' + usuario.ap_paterno}}
-    
-  </h1>
-  
-  
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-
-
-<ion-tabs>
-  <ion-tab-bar slot="bottom" class="tab">
-    
-    <ion-tab-button tab="profesor/{{usuario.rut}}" >
-      <ion-icon name="attach-outline"></ion-icon>
-      <ion-label>asignaturas</ion-label>
-      <ion-badge>1</ion-badge>
-    </ion-tab-button>
-
-    <ion-tab-button tab="perfil/{{usuario.rut}}">
-      <ion-icon name="person-circle-outline"></ion-icon>
-      <ion-label>Perfil</ion-label>
-    </ion-tab-button>
-
-  </ion-tab-bar>
-</ion-tabs>
-</ion-card>
-</ion-content>
-
-
-<ion-content *ngIf="usuario.tipo_usuario == 'alumno'">
-
-  <ion-card class="ion-cardFondo">
-<!--     <ion-title class="bienvenido" >Bienvenido: {{usuario.nombre + ' ' + usuario.ap_paterno}}</ion-title> -->   
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-
-<h1>Bienvenido: {{usuario.nombre + ' ' + usuario.ap_paterno}}</h1>
-
-
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    
-
-
-<ion-tabs>
-  <ion-tab-bar slot="bottom" class="tab">
-    
-    <ion-tab-button tab="alumno/{{usuario.rut}}" *ngIf="usuario.tipo_usuario == 'alumno'">
-      <ion-icon name="qr-code-outline"></ion-icon>
-      <ion-label>Escanear Qr</ion-label>
-      <ion-badge>1</ion-badge>
-    </ion-tab-button>
-
-    <ion-tab-button tab="perfil/{{usuario.rut}}">
-      <ion-icon name="person-circle-outline"></ion-icon>
-      <ion-label>Perfil</ion-label>
-    </ion-tab-button>
-
-  </ion-tab-bar>
-</ion-tabs>
-</ion-card>
 </ion-content>

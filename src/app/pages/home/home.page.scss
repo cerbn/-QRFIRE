@@ -32,22 +32,37 @@
 }
 
 .header{
-  background-color: bisque;
+  background-color: rgb(199, 118, 18);
 }
 
 
 .ion-cardFondo{
   background: linear-gradient(#269fbd, #dddee0);
+  display: flex;
+  flex-direction: column;
+  height: 95%;
+  width: 100%;
+  align-items: center;
+
 
 }
 
-.bienvenido{
-  text-align: center;
+.imagen_login{
+  align-items: center;
+  top: 20%;
+  width: 40%;
+  flex-direction: column;
 
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 50%;
-  
+}
 
+
+
+
+
+@media (max-width: 400px) {
+  .fondo {
+      ion-card {
+          width: 80vw;
+      }
+  }
 }

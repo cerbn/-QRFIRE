@@ -1,33 +1,59 @@
+<ion-content >
 
-<ion-content class="cont" >
+  <div class="fondo">
+  <h1>Lista de asignaturas</h1>
+  <div class="div">
+    
 
-  <h1 class="titulo">Lista de asignaturas</h1>
-  <div class="cont">
-  <!-- <div *ngIf="asignaturas.length != 0; else elseBlock"> -->
-    <ion-list *ngFor="let a of asignaturas" class="cont">
-      <ion-card *ngIf="rut == a.profesor">
-        
-        <p>Id Asignatura: {{a.id}} <br><br>Nombre: {{a.nombre}}<br><br>Sigla:{{a.sigla}}</p>
-        <ion-item class="qr">
 
-          <ion-button slot="end" color="warning" (click)="buscarClase(a.id)" (click)="buscarId(a.id)" (click)="generarQR()" (click)="generarClase()">Iniciar Clase</ion-button>
+    <ion-list *ngFor="let a of asignaturas" class="lista">
 
+    <ion-card class="cardlista" *ngIf="rut == a.profesor">
+
+    <ion-accordion-group >
+      <ion-accordion value="second">
+        <ion-item slot="header" color="light">
+          <ion-label>Sigla de la Asignatura: {{a.sigla}}</ion-label>
         </ion-item>
-      </ion-card>
+        <div class="ion-padding" slot="content">
 
-    </ion-list>
+          <ion-card-title>ID: {{a.id}}</ion-card-title>
+          <ion-card-title>NOMBRE: {{a.nombre}}</ion-card-title>
+          <ion-card-title>SIGLA: {{a.sigla}}</ion-card-title>
+
+
+      <ion-item>
+        <ion-button slot="end" color="warning"(click)="buscarId(a.id)" (click)="generarQR()" (click)="generarClase()">Iniciar Clase</ion-button>
+        <ion-button slot="end" color="warning" (click)="resetIde()">Terminar Clase</ion-button>
+      </ion-item>
+
+
+        </div>
+      </ion-accordion>
+    </ion-accordion-group>
+<br>
+<br>
+<br>
+<ion-card-title>Estado de la Clase: {{estado}} </ion-card-title>
+
+
+  </ion-card>
+</ion-list>
+
   </div>
+
   <!-- CODIGO QR AQUI -->
   <ion-item class="qr">
-    <ion-card class="qr">
-<!--       <ngx-qrcode [elementType]="elementType" [value]="asistencia.value"></ngx-qrcode>
- -->      <ngx-qrcode [elementType]= 'elementType' value="{{asistencia.ide}}"></ngx-qrcode>
-      <p>codigo de la clase</p>
-      <ion-input class="cod" placeholder=""  [(ngModel)]="asistencia.ide"  disabled="true" class="cod"></ion-input >
-
-      
+    <ion-card class="cardlistaa">
+      <ngx-qrcode [elementType]= 'elementType' value="{{asistencia.ide}}"></ngx-qrcode>
+      <h1>Codigo de la Clase</h1>
+      <ion-input placeholder=""  [(ngModel)]="asistencia.ide"  disabled="true" class="cod"></ion-input >
+    
     </ion-card>
     
 
   </ion-item>
+
+  
+</div>
 </ion-content>
