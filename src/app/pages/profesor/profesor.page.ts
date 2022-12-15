@@ -27,9 +27,7 @@ export class ProfesorPage implements OnInit {
   clasesFecha: any =''
   id: any = ''
   estado: any = 'No Iniciada'
-
-
-
+  cantidad : any [] = []
 
   asistencia = {
     ide: '',
@@ -105,11 +103,12 @@ generarClase(){
  this.clases = this.clasess.find(clas => clas.ide == this.asistencia.ide)
 if(this.clases == undefined){
 
-  console.log(this.clases)
-  this.FirebaseService.agregar('clases', this.asistencia)
-  this.estado = 'Clase Iniciada'
- 
-  this.toastexito('bottom', 'La Clase Fue Iniciada');
+    console.log(this.clases)
+    this.FirebaseService.agregar('clases', this.asistencia)
+    this.estado = 'Clase Iniciada'
+   
+    this.toastexito('bottom', 'La Clase Fue Iniciada');
+
 
 }else{
   this.toastError('bottom', 'Error! clase no iniciada');
@@ -123,11 +122,6 @@ resetIde(){
   this.estado = 'Clase Terminada'
 
 }
-
-
-
-
-
 
 
 async toastError(position: 'bottom', message: string) {

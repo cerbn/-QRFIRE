@@ -7,41 +7,53 @@
       <ion-card>
   
         <ion-card-header>
-          <ion-card-subtitle>INGRESAR</ion-card-subtitle>
+          <h1>Agregar Asignatura</h1>
+
         </ion-card-header>
         <ion-card-content>
           <ion-item >
             <ion-label position="stacked">sigla</ion-label>
-            <ion-input formControlName="sigla" type="text" placeholder="Ingrese correo"></ion-input>
+            <ion-input formControlName="sigla" type="text" placeholder="Ingrese sigla Asignatura"></ion-input>
           </ion-item>
           <ion-item>
             <ion-label position="stacked">nombre</ion-label>
-            <ion-input formControlName="nombre" type="text" placeholder="Ingrese clave"></ion-input>
+            <ion-input formControlName="nombre" type="text" placeholder="Ingrese Nombre Asignatura"></ion-input>
           </ion-item>
+
+
           <ion-item>
-            <ion-label position="stacked">profesor</ion-label>
-            <ion-input formControlName="profesor" type="text" placeholder="Ingrese clave"></ion-input>
+            <ion-select placeholder="Seleccione profesor" formControlName="rutprof_asignatura">
+              <ion-select-option *ngFor="let up of usrProf" value="{{up.rut}}">{{up.nombre}}</ion-select-option>
+            </ion-select>
           </ion-item>
-          <ion-button type="submit" expand="full">Ingresar</ion-button>
-          <ion-button (click)="modificar()" [disabled]="id_modificar == ''" expand="full">Modificar</ion-button>
+
+
+
+<!--           <ion-item>
+            <ion-label position="stacked">profesor</ion-label>
+            <ion-input formControlName="profesor" type="text" placeholder="Ingrese Rut Profesor"></ion-input>
+          </ion-item> -->
+
+          
+          <ion-button type="submit" [disabled]="!asignatura.valid" expand="full">Ingresar</ion-button>
+          <ion-button (click)="modificar()" [disabled]="id_modificar == ''"  expand="full">Modificar</ion-button>
 
         </ion-card-content>
 
       </ion-card>
 
 
-
+      
+      <div class="fondo">
         <h1>Lista de asignaturas</h1>
-        <div class="div">
-          
-          <ion-list *ngFor="let u of asignaturas" class="lista">
+        <ion-list *ngFor="let u of asignaturas" class="lista">
     
             <ion-card class="cardlista">
           
                   <ion-card-title>ID: {{u.id}}</ion-card-title>
                   <ion-card-title>sigla: {{u.sigla}}</ion-card-title>
                   <ion-card-title>NOMBRE: {{u.nombre}}</ion-card-title>
-                  <ion-card-title>profesor: {{u.profesor}}</ion-card-title>
+                  <ion-card-title>Rut profesor: {{u.rutprof_asignatura}}</ion-card-title>
                   
               <ion-item>
                 <ion-button slot="end" color="warning"(click)="buscar(u.id)">Buscar</ion-button>

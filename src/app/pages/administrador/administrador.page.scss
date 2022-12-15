@@ -4,8 +4,8 @@
 ion-card {
     --background: linear-gradient(#269fbd, #dddee0);
     margin: 0 auto;
-    top: 2vh;
-    height: 100vh;
+    top: 1vh;
+    height: 110vh;
     width: 60vh;
     display: flex;
     flex-direction: column;
@@ -16,9 +16,9 @@ ion-card {
 .cardlista{
     background-color: rgb(255, 246, 246);
     margin: 0 auto;
-    top: 2vh;
-    height: 80vh;
-    width: 90vh;
+    top: 1vh;
+    height: 100vh;
+    width: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;

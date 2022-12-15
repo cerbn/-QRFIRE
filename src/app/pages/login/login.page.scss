@@ -1,11 +1,12 @@
 @use '../../../global.scss';
 
 .fondo {
-    height: 200vh;
+    height: 100vh;
     background-image: url("../../..//assets/img/fondo_duoc.jpg");
     background-size: cover;
     text-align: center;
 }
+
 ion-card {
     --background: linear-gradient(#269fbd, #dddee0);
     margin: 0 auto;
@@ -20,7 +21,7 @@ ion-card {
 }
 
 .imagen_login {
-    width: 30%;
+    width: 60%;
 }
 
 

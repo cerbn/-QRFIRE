@@ -8,7 +8,7 @@
 
     <ion-list *ngFor="let a of asignaturas" class="lista">
 
-    <ion-card class="cardlista" *ngIf="rut == a.profesor">
+    <ion-card class="cardlista" *ngIf="rut == a.rutprof_asignatura">
 
     <ion-accordion-group >
       <ion-accordion value="second">
@@ -34,7 +34,8 @@
 <br>
 <br>
 <br>
-<ion-card-title>Estado de la Clase: {{estado}} </ion-card-title>
+
+<h1>Alumnos Presentes: </h1>
 
 
   </ion-card>

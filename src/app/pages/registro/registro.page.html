@@ -54,7 +54,7 @@
           </ion-checkbox>
         </ion-item> -->
 
-        <ion-button expand="full" type="submit" >REGISTRAR</ion-button>
+        <ion-button expand="full" type="submit" [disabled]="!usuario.valid">REGISTRAR</ion-button>
       </ion-card>
     </form>
   </div>

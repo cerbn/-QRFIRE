@@ -29,10 +29,9 @@ ion-card {
 }
 
 
-
 .fondo {
-    height: 200vh;
-    background-color: rgb(160, 154, 148);
+    height: 100vh;
+    background-image: url("../../..//assets/img/fondo_duoc.jpg");
     background-size: cover;
     text-align: center;
 }
@@ -55,6 +54,16 @@ ion-card {
     align-items: center;
     background-size: cover;
 
+}
+
+
+ion-item {
+    --background: none;
+
+    ion-label {
+        font-size: large;
+        font-weight: bold;
+    }
 }
 
 @media (max-width: 400px) {

@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { AsistenciaService } from 'src/app/services/asistencia.service';
-import { AsistenciaPageModule } from '../asistencia/asistencia.module';
 import { ProfesorPage } from '../profesor/profesor.page';
 import { ActivatedRoute, Router } from '@angular/router';
 import { UsuarioService } from 'src/app/services/usuario.service';

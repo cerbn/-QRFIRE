@@ -26,15 +26,6 @@ const routes: Routes = [
     loadChildren: () => import('./pages/recuperar/recuperar.module').then( m => m.RecuperarPageModule)
   },  
   {
-    path: 'qrcode',
-    loadChildren: () => import('./pages/qrcode/qrcode.module').then( m => m.QrcodePageModule)
-  },
-
-  {
-    path: 'asistencia',
-    loadChildren: () => import('./pages/asistencia/asistencia.module').then( m => m.AsistenciaPageModule)
-  },
-  {
     path: '**',
     loadChildren: () => import('./pages/error404/error404.module').then( m => m.Error404PageModule)
   },

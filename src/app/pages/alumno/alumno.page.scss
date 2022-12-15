@@ -5,9 +5,17 @@
 
 .cardIngrear{
 
-    --background: linear-gradient(#269fbd, #dddee0);
-
-}  
+        --background: linear-gradient(#269fbd, #dddee0);
+        margin: 0 auto;
+        top: 2vh;
+        height: 50vh;
+        width: 60vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-size: cover;
+    
+    }
 .boton{
 
     --background: linear-gradient(#ffd900, #ffd900,);

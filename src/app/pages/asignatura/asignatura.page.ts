@@ -17,15 +17,17 @@ export class AsignaturaPage implements OnInit {
   id_modificar: any = '';
   handlerMessage = '';
   roleMessage = ''
+  usuarios: any[] = [];
+  usrProf: any[] = [];
 
   //variable:
   asignatura = new FormGroup({
     sigla: new FormControl('',[Validators.required]),
     nombre: new FormControl('',[Validators.required]),
-    profesor: new FormControl('',[Validators.required]),
+    rutprof_asignatura: new FormControl('', [Validators.required]),
   });
 
-  usuarios: any[] = [];
+
   asignaturasEncontradas: any 
   //variable de pruebas unitarias:
   v_agregar: boolean = false;
@@ -35,8 +37,27 @@ export class AsignaturaPage implements OnInit {
 
   ngOnInit(){
     this.cargarDatos()
-
+    this.cargarDatosProf()
     }
+
+
+/*     this.usrProf = this.usuarios.find(u => u.tipo_usuario == 'profesor');
+ */
+cargarDatosProf(){
+  this.fireService.getDatos('usuarios').subscribe(
+    (datosfb: any) => {
+      this.usuarios = [];
+      for(let u of datosfb){
+        // console.log(usuario.payload.doc.data());
+        let usu = u.payload.doc.data();
+        usu['id'] = u.payload.doc.id;
+        this.usuarios.push(usu);
+        this.usrProf = this.usuarios.filter(u => u.tipo_usuario == 'profesor');
+      }
+    }
+  );
+}
+
 
 
     cargarDatos(){
